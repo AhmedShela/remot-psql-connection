@@ -14,7 +14,10 @@ const client = new psql.Client({
     database:'psqltest',
     port: 5432,
     debug: false,
-    multipleStatements: true
+    multipleStatements: true,
+    ssl: {
+        rejectUnauthorized: false
+      }
 });
 //psql -U postgres -h 192.168.198.1  
 const PORT = process.env.PORT || 3030;
